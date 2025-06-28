@@ -78,6 +78,7 @@ jobs:
         cd project
         source ../scripts/add_packages.sh
         source ../scripts/custome_config.sh
+        source ../scripts/add-aic8800.sh
 
     - name: Prepare dot config and feeds
       run: |
@@ -98,9 +99,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
-    - name: Integrate AIC8800 driver
-      run: bash scripts/add-aic8800.sh
 
     - name: Compile friendlyWrt
       id: compile
