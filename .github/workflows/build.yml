@@ -99,6 +99,9 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+    - name: Integrate AIC8800 driver
+      run: bash scripts/add-aic8800.sh
+
     - name: Compile friendlyWrt
       id: compile
       continue-on-error: true
